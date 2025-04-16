@@ -52,8 +52,6 @@ class Monster extends Phaser.Scene {
         my.sprite.rightAntenna = this.add.sprite(this.bodyX - 25, this.bodyY - 100, "monsterParts", "detail_red_antenna_small.png");
         my.sprite.rightAntenna.flipX = true;
 
-        this.currExpression = "smile";
-
         my.sprite.angryMouth.visible = false;
 
         this.keys = this.input.keyboard.addKeys({
@@ -71,13 +69,11 @@ class Monster extends Phaser.Scene {
         if (Phaser.Input.Keyboard.JustDown(this.keys.smile)) {
             my.sprite.angryMouth.visible = false;
             my.sprite.smilingMouth.visible = true;
-            this.currExpression = "smile";
         }
 
         if (Phaser.Input.Keyboard.JustDown(this.keys.fangs)) {
             my.sprite.smilingMouth.visible = false;
             my.sprite.angryMouth.visible = true;
-            this.currExpression = "fangs";
         }
         
         if (this.keys.left.isDown) {
